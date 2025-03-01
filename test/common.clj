@@ -1,5 +1,16 @@
 (ns common
-  (:require [taoensso.telemere :as tel]))
+  (:require [clojure.test :refer [testing testing-contexts-str] :rename {testing testing'}]
+            [taoensso.telemere :as tel]))
+
+(defmacro testing [string & body]
+  `(testing' ~string
+     (println)
+     (println (testing-contexts-str))
+     (flush)
+     (let [res# (do ~@body)]
+       (println)
+       (flush)
+       res#)))
 
 (defn handle-exception [ex error-level]
   (tel/log! {:level error-level
