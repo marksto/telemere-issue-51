@@ -4,4 +4,11 @@
                                   :git/url "https://github.com/marksto/knit.git"
                                   :git/sha "ab62ff94d2a09e1dd47fd32c8cf54f1084186c5f"}
            com.taoensso/telemere {:mvn/version "1.0.0-SNAPSHOT"}}
- :aliases {:test {:extra-paths ["test"]}}}
+ :aliases {:test
+           {:extra-paths ["test"]}
+           
+           :run-tests
+           {:extra-deps {io.github.cognitect-labs/test-runner {:git/tag "v0.5.1"
+                                                               :git/sha "dfb30dd"}}
+            :main-opts  ["-m" "cognitect.test-runner"]
+            :exec-fn    cognitect.test-runner.api/test}}}
