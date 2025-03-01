@@ -14,3 +14,7 @@
   (common/testing "ERROR level affects order in log"
     (dotimes [n 10]
       (sut/schedule! #(common/run-on-executor n :error)))))
+
+(comment
+  (run-tests)
+  .)

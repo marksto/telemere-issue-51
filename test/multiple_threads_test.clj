@@ -16,3 +16,7 @@
   (common/testing "ERROR level affects order in log"
     (dotimes [n (* 2 proc-cnt)]
       (sut/schedule! #(common/run-on-executor n :error)))))
+
+(comment
+  (run-tests)
+  .)
