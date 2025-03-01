@@ -7,8 +7,14 @@
                                  ThreadFactory
                                  TimeUnit)))
 
+(defn drop-hostname-mw [signal]
+  (dissoc signal :host))
+
+(tel/set-middleware! drop-hostname-mw)
+
 (Runtime/.addShutdownHook (Runtime/getRuntime) (Thread. ^Runnable tel/stop-handlers!))
 
+;;
 
 (def ^:dynamic *executor* nil)
 
