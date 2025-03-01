@@ -27,7 +27,7 @@
 (defn do-smth [n]
   (tel/log! :info (format "#%s: Doing something..." n))
   (random-sleep)
-  (throw (ex-info "#%s: Ooops!" {:type :eligible-for-handling, :n n})))
+  (throw (ex-info "Ooops!" {:type :eligible-for-handling, :n n})))
 
 (defn run-on-executor
   [n error-level]
