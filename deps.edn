@@ -1,0 +1,7 @@
+{:paths   ["src"]
+ :deps    {org.clojure/clojure   {:mvn/version "1.12.0"}
+           cc.qbits/knit         {#_#_:mvn/version "2.0.0"
+                                  :git/url "https://github.com/marksto/knit.git"
+                                  :git/sha "ab62ff94d2a09e1dd47fd32c8cf54f1084186c5f"}
+           com.taoensso/telemere {:mvn/version "1.0.0-SNAPSHOT"}}
+ :aliases {:test {:extra-paths ["test"]}}}
